@@ -101,7 +101,9 @@ MacroActionScreenshotEdit::MacroActionScreenshotEdit(
 	  _saveType(new QComboBox()),
 	  _savePath(new FileSelection(FileSelection::Type::WRITE, this))
 {
-	populateVideoSelection(_sources, true, false);
+	setToolTip(obs_module_text(
+		"AdvSceneSwitcher.action.screenshot.blackscreenNote"));
+	populateVideoSelection(_sources, true, true);
 	addOBSMainOutputEntry(_sources);
 	populateSaveTypeSelection(_saveType);
 
